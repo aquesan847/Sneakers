@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgSneakers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:contentDescription="@string/contentDescription_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvSneakersNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/tvSneakersName"
+        app:layout_constraintEnd_toStartOf="@+id/tvSneakersName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSneakers" />
+
+    <TextView
+        android:id="@+id/tvSneakersName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/tvSneakersName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSneakersNameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/imgSneakers" />
+
+    <TextView
+        android:id="@+id/tvSneakersBrandTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/tvSneakersBrand"
+        app:layout_constraintEnd_toStartOf="@+id/tvSneakersBrand"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSneakersNameTitle" />
+
+    <TextView
+        android:id="@+id/tvSneakersBrand"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/tvSneakersBrand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSneakersBrandTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSneakersName" />
+
+    <TextView
+        android:id="@+id/tvSneakersSizeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/tvSneakersSize"
+        app:layout_constraintEnd_toStartOf="@+id/tvSneakersSize"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSneakersBrand" />
+
+    <TextView
+        android:id="@+id/tvSneakersSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/tvSneakersSize"
+        app:layout_constraintEnd_toStartOf="@+id/tvSneakersBuyDateTitle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSneakersSizeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSneakersBrand" />
+
+    <TextView
+        android:id="@+id/tvSneakersBuyDateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/tvSneakersBuyDate"
+        app:layout_constraintEnd_toStartOf="@+id/tvSneakersBuyDate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSneakersSize"
+        app:layout_constraintTop_toBottomOf="@+id/tvSneakersBrand" />
+
+    <TextView
+        android:id="@+id/tvSneakersBuyDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/tvSneakersBuyDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSneakersBuyDateTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSneakersBrand" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Final Project</string>
+
+    <string name="contentDescription_logo">contentDescription_logo</string>
+    <string name="contentDescription_upload">contentDescription_upload</string>
+    <string name="contentDescription_sneakers">ivGameCover</string>
+    <string name="contentDescription_fabAddSneakers">contentDescription_fabAddSneakers</string>
+
+    <string name="tvSneakersName">Name:</string>
+    <string name="tvSneakersSize">Size:</string>
+    <string name="tvSneakersBrand">Sneakers Brand:</string>
+    <string name="tvSneakersBuyDate">Buy date:</string>
+    <string name="tvUrl">Image Url:</string>
+    <string name="hintSneakersName">Sneakers Name</string>
+    <string name="hintSneakersBrand">Sneakers Brand</string>
+    <string name="hintSneakersSize">Size</string>
+    <string name="hintSneakersBuyDate">Buy Date</string>
+    <string name="hintUrl">Image Url</string>
+    <string name="btCancelAddSneakers">Cancel</string>
+    <string name="btAddSneakers">Add</string>
+    <string name="btDeleteSneakers">Delete</string>
+    <string name="btEditSneakers">Edit</string>
+    <string name="btCancelEditSneakers">Cancel</string>
+    <string name="btSaveEditSneakers">Save</string>
+
+    <string name="toast_invalidInputData">Invalid input data</string>
+    <string name="alertDialog_add_title">Add sneakers</string>
+    <string name="alertDialog_add_message">Add this sneakers to your rack?</string>
+    <string name="alertDialog_confirm">Accept</string>
+    <string name="alertDialog_cancel">Cancel</string>
+
+    <string name="alertDialog_edit_title">Edit Sneakers</string>
+    <string name="alertDialog_edit_message">Do you want to save changes?</string>
+
+    <string name="alertDialog_delete_title">Delete Sneakers</string>
+    <string name="alertDialog_delete_message">"Do yo want to delete these sneakers from your rack? "</string>
+
+    <string name="error_SneakersName">You already have these ones in your rack</string>
+    <string name="helper_Date">Format: YYYY</string>
+    <string name="toast_addSneakers"> Your sneakers have been added to your rack</string>
+
+    <string name="empty_field"/>
+    <string name="default_spinnerName">Select your sneakers\' brand</string>
+    <string name="tvMainTitle"><i>Sneakers Rack</i></string>
+    <string name="toast_editSneakers">Sneakers edited</string>
+    <string name="toast_deleteSneakers">Sneakers deleted</string>
+    <string name="sneakerName">SneakersName</string>
+    <string name="sneakerBrand">SneakersBrand</string>
+    <string name="sneakerSize">SneakersSize</string>
+    <string name="sneakerBuyDate">SneakersBuyDate</string>
+    <string name="sneakerUrl">SneakersUrl</string>
+</resources>
