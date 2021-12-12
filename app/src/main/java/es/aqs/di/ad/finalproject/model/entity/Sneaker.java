@@ -43,7 +43,7 @@ public class Sneaker {
 
     public boolean isValid() {
         return !(name.isEmpty() || idSneakerBrand <= 0 ||
-                size.isEmpty() || buyDate.isEmpty() || Integer.parseInt(buyDate) > LocalDate.now().getYear() ||
-                Integer.parseInt(buyDate) < 1977 || imageUrl.isEmpty());
+                size.isEmpty() || buyDate.isEmpty() || !(Integer.parseInt(size) >=35 && Integer.parseInt(size) <= 50) ||
+                !buyDate.contains("/") || imageUrl.isEmpty());
     }
 }

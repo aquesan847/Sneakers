@@ -1,11 +1,14 @@
 package es.aqs.di.ad.finalproject.view.activity;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -14,6 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import es.aqs.di.ad.finalproject.R;
 import es.aqs.di.ad.finalproject.databinding.FragmentAddBinding;
@@ -67,9 +72,7 @@ public class AddFragment extends Fragment {
                     videoGameVM.insertSneaker(sneaker);
                     Toast.makeText(getParentFragment().getContext(), R.string.toast_addSneakers, Toast.LENGTH_LONG).show();
                 })
-                .setNegativeButton(R.string.alertDialog_cancel, (dialog, which) -> {
-                    dialog.cancel();
-                })
+                .setNegativeButton(R.string.alertDialog_cancel, (dialog, which) -> dialog.cancel())
                 .show();
     }
 
@@ -112,9 +115,7 @@ public class AddFragment extends Fragment {
     private void getViewModel() {
         videoGameVM = new ViewModelProvider(this).get(SneakerViewModel.class);
 
-        videoGameVM.getInsertResults().observe(getViewLifecycleOwner(), list -> {
-            cleanFields();
-        });
+        videoGameVM.getInsertResults().observe(getViewLifecycleOwner(), list -> cleanFields());
 
         SneakerBrandViewModel videoGameConsoleVM = new ViewModelProvider(this).get(SneakerBrandViewModel.class);
         videoGameConsoleVM.getSneakerBrands().observe(getViewLifecycleOwner(), videoGameConsoles -> {
@@ -124,7 +125,7 @@ public class AddFragment extends Fragment {
             sneakerBrand.name = getString(R.string.default_spinnerName);
             videoGameConsoles.add(0, sneakerBrand);
             ArrayAdapter<SneakerBrand> adapter =
-                    new ArrayAdapter<SneakerBrand>(getParentFragment().getContext(), android.R.layout.simple_spinner_dropdown_item, videoGameConsoles);
+                    new ArrayAdapter<>(getParentFragment().getContext(), android.R.layout.simple_spinner_dropdown_item, videoGameConsoles);
             spSneakersBrand.setAdapter(adapter);
         });
     }
@@ -136,10 +137,28 @@ public class AddFragment extends Fragment {
         etSneakersBuyDate = binding.etBuyDate;
         etUrl = binding.etUrl;
 
+        final TextInputLayout textInputLayout = binding.textInputLayoutBuyDate;
+        textInputLayout.setStartIconOnClickListener(v -> showDatePickerDialog());
+
         ivVideoGameCover = binding.imgUpload;
 
         getViewModel();
 
         defineAddListener();
     }
+
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance((datePicker, year, month, day) -> {
+            // +1 because January is zero
+            final String selectedDate = twoDigits(day) + "/" + twoDigits(month+1) + "/" + year;
+            etSneakersBuyDate.setText(selectedDate);
+        });
+        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
+    }
+
+    private String twoDigits(int n) {
+        return (n<=9) ? ("0"+n) : String.valueOf(n);
+    }
+
+
 }

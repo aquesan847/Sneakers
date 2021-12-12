@@ -1,12 +1,15 @@
 package es.aqs.di.ad.finalproject.view.activity;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -16,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import es.aqs.di.ad.finalproject.R;
 import es.aqs.di.ad.finalproject.databinding.FragmentEditBinding;
@@ -79,6 +84,9 @@ public class EditFragment extends Fragment {
         btSaveEditSneakers = binding.btSaveEditVideoGame;
         btCancelEditSneakers = binding.btCancelEditVideoGame;
 
+        final TextInputLayout textInputLayout = binding.textInputLayoutBuyDate;
+        textInputLayout.setStartIconOnClickListener(v -> showDatePickerDialog());
+
         getViewModel();
         defineDeleteListener();
         defineEditListener();
@@ -125,9 +133,7 @@ public class EditFragment extends Fragment {
                     Toast.makeText(getParentFragment().getContext(), R.string.toast_deleteSneakers, Toast.LENGTH_LONG).show();
                     NavHostFragment.findNavController(EditFragment.this).navigate(R.id.action_editFragment_to_mainFragment);
                 })
-                .setNegativeButton(R.string.alertDialog_cancel, (dialog, which) -> {
-                    dialog.cancel();
-                })
+                .setNegativeButton(R.string.alertDialog_cancel, (dialog, which) -> dialog.cancel())
                 .show();
     }
 
@@ -153,9 +159,7 @@ public class EditFragment extends Fragment {
                     Toast.makeText(getParentFragment().getContext(), R.string.toast_editSneakers, Toast.LENGTH_LONG).show();
                     NavHostFragment.findNavController(EditFragment.this).navigate(R.id.action_editFragment_to_mainFragment);
                 })
-                .setNegativeButton(R.string.alertDialog_cancel, (dialog, which) -> {
-                    dialog.cancel();
-                })
+                .setNegativeButton(R.string.alertDialog_cancel, (dialog, which) -> dialog.cancel())
                 .show();
 
     }
@@ -192,13 +196,26 @@ public class EditFragment extends Fragment {
             sneakerBrand.name = getString(R.string.default_spinnerName);
             videoGameConsoles.add(0, sneakerBrand);
             ArrayAdapter<SneakerBrand> adapter =
-                    new ArrayAdapter<SneakerBrand>(getParentFragment().getContext(), android.R.layout.simple_spinner_dropdown_item, videoGameConsoles);
+                    new ArrayAdapter<>(getParentFragment().getContext(), android.R.layout.simple_spinner_dropdown_item, videoGameConsoles);
             spSneakersBrand.setAdapter(adapter);
 
             spSneakersBrand = binding.spinnerBrand;
             spSneakersBrand.setSelection(Integer.parseInt(String.valueOf(getArguments().getSerializable(getString(R.string.sneakerBrand)))));
 
         });
+    }
+
+    private void showDatePickerDialog() {
+        DatePickerFragment newFragment = DatePickerFragment.newInstance((datePicker, year, month, day) -> {
+            // +1 because January is zero
+            final String selectedDate = twoDigits(day) + "/" + twoDigits(month+1) + "/" + year;
+            etSneakersBuyDate.setText(selectedDate);
+        });
+        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
+    }
+
+    private String twoDigits(int n) {
+        return (n<=9) ? ("0"+n) : String.valueOf(n);
     }
 
 }

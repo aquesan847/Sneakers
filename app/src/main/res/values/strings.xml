@@ -14,7 +14,9 @@
     <string name="hintSneakersName">Sneakers Name</string>
     <string name="hintSneakersBrand">Sneakers Brand</string>
     <string name="hintSneakersSize">Size</string>
+    <string name="helperSizeText" >Insert a number between 35–50</string>
     <string name="hintSneakersBuyDate">Buy Date</string>
+    <string name="helperDateText">Date format —> dd/mm/yyyy</string>
     <string name="hintUrl">Image Url</string>
     <string name="btCancelAddSneakers">Cancel</string>
     <string name="btAddSneakers">Add</string>
@@ -49,4 +51,5 @@
     <string name="sneakerSize">SneakersSize</string>
     <string name="sneakerBuyDate">SneakersBuyDate</string>
     <string name="sneakerUrl">SneakersUrl</string>
+    <string name="dark_mode">Dark Mode</string>
 </resources>

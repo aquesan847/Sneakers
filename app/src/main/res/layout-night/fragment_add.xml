@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:contentDescription="@string/contentDescription_upload"
+                android:scaleType="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -43,7 +44,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgUpload"
                 app:startIconDrawable="@drawable/sneakers_icon"
-                app:startIconTintMode="screen">
+                app:startIconTintMode="multiply">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etName"
@@ -61,6 +62,7 @@
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/spinner_style"
                 android:minHeight="48dp"
+                android:theme="@style/mySpinnerItemStyle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName"
