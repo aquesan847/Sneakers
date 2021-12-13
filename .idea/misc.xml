@@ -42,6 +42,8 @@
         <entry key="..\:/Users/elsan/Desktop/FinalProject/app/src/main/res/layout/item_video_game_console.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/elsan/Desktop/FinalProject/app/src/main/res/layout/month_year_picker_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/elsan/Desktop/FinalProject/app/src/main/res/menu/settings_menu.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout-sw600dp/item_sneakers.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item_sneakers.xml" value="0.21014492753623187" />
       </map>
     </option>
   </component>
